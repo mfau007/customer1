@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: lso-app
+  name: lso-app1
   namespace: openshift-gitops
 spec:
   destination:
@@ -9,8 +9,8 @@ spec:
     server: https://kubernetes.default.svc 
   project: default 
   source: 
-    path: lso
-    repoURL: https://github.com/mfau007/customer1
+    path: lso/application-manifest
+    repoURL: https://github.com/mfau007/customer1/lso
     targetRevision: main
   syncPolicy: 
     automated:
