@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc 
   project: default 
   source: 
-    path: lso/application-mainfest
+    path: lso
     repoURL: https://github.com/mfau007/customer1
     targetRevision: main
   syncPolicy: 
