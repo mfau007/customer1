@@ -10,7 +10,7 @@ spec:
   project: default 
   source: 
     path: lso/application-manifest
-    repoURL: https://github.com/mfau007/customer1/lso
+    repoURL: https://github.com/mfau007/customer1
     targetRevision: main
   syncPolicy: 
     automated:
