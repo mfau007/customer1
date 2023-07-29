@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: lso-app2
+  name: lso-app3
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: openshift-local-storage
+    namespace: lso-app3
     server: https://kubernetes.default.svc 
   project: default 
   source: 
