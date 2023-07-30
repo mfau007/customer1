@@ -20,4 +20,4 @@ spec:
           operator: Exists
   storageClassName: local-hdd
   volumeMode: Block
-  maxDeviceCount: 1
+  maxDeviceCount: 2
