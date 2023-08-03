@@ -25,7 +25,7 @@ spec:
   nodeTopologies: {}
   storageDeviceSets:
   - config: {}
-    count: 2
+    count: 3
     dataPVCTemplate:
       metadata: {}
       spec:
@@ -38,6 +38,24 @@ spec:
         volumeMode: Block
       status: {}
     name: ocs-deviceset-local-hdd
+    placement: {}
+    preparePlacement: {}
+    replica: 3
+    resources: {}
+  - config: {}
+    count: 3
+    dataPVCTemplate:
+      metadata: {}
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: "1"
+        storageClassName: local-nvme
+        volumeMode: Block
+      status: {}
+    name: ocs-deviceset-local-nvme
     placement: {}
     preparePlacement: {}
     replica: 3
