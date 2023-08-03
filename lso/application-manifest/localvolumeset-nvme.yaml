@@ -1,0 +1,23 @@
+---
+apiVersion: local.storage.openshift.io/v1alpha1
+kind: LocalVolumeSet
+metadata:
+  name: local-nvme
+  namespace: openshift-local-storage
+  annotations:
+    argocd.argoproj.io/sync-wave: "6"
+spec:
+  deviceInclusionSpec:
+    deviceMechanicalProperties:
+    - NonRotational
+    deviceTypes:
+    - disk
+    minSize: 190Gi
+  nodeSelector:
+    nodeSelectorTerms:
+      - matchExpressions:
+        - key: cluster.ocs.openshift.io/openshift-storage
+          operator: Exists
+  storageClassName: local-nvme
+  volumeMode: Block
+  maxDeviceCount: 1
