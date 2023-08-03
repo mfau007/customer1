@@ -41,6 +41,7 @@ spec:
     placement: {}
     preparePlacement: {}
     replica: 3
+    deviceType: hdd
     resources: {}
   - config: {}
     count: 1
@@ -59,5 +60,6 @@ spec:
     placement: {}
     preparePlacement: {}
     replica: 3
+    deviceType: nvme
     resources: {}
   version: 4.12.0
