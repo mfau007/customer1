@@ -11,7 +11,7 @@ spec:
     kms: {}
   externalStorage: {}
   managedResources:
-    cephBlockPools: {}
+    cephBlockPools: 
       reconcileStrategy: ignore  # added this
     cephCluster: {}
     cephConfig: {}
