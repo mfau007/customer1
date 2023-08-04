@@ -12,7 +12,7 @@ spec:
   externalStorage: {}
   managedResources:
     cephBlockPools: {}
-    reconcileStrategy: ignore  # added this
+      reconcileStrategy: ignore  # added this
     cephCluster: {}
     cephConfig: {}
     cephDashboard: {}
