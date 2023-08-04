@@ -28,7 +28,7 @@ spec:
   nodeTopologies: {}
   storageDeviceSets:
   - config: {}
-    count: 1 # verify with stephen
+    count: 3 # verify with stephen
     dataPVCTemplate:
       metadata: {}
       spec:
@@ -43,11 +43,11 @@ spec:
     name: ocs-deviceset-local-hdd
     placement: {}
     preparePlacement: {}
-    replica: 3
+    replica: 1
     deviceType: hdd # added this field
     resources: {}
   - config: {}  # added this on down for the nvme
-    count: 1
+    count: 3
     dataPVCTemplate:
       metadata: {}
       spec:
@@ -62,7 +62,7 @@ spec:
     name: ocs-deviceset-local-nvme
     placement: {}
     preparePlacement: {}
-    replica: 3
+    replica: 1
     deviceType: nvme  #added this
     resources: {}
   version: 4.12.0
