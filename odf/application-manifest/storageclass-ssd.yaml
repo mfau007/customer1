@@ -2,7 +2,7 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: ocs-storagecluster-ceph-rbd-nvme
+  name: ocs-storagecluster-ceph-rbd-ssd
   annotations:
     argocd.argoproj.io/sync-wave: "8"
     description: NVMe - Provides RWO Filesystem volumes, and RWO and RWX Block volumes
@@ -17,7 +17,7 @@ parameters:
   csi.storage.k8s.io/provisioner-secret-namespace: openshift-storage
   imageFeatures: layering
   imageFormat: "2"
-  pool: ocs-storagecluster-cephblockpool-nvme
+  pool: ocs-storagecluster-cephblockpool-ssd
 provisioner: openshift-storage.rbd.csi.ceph.com
 reclaimPolicy: Delete
 volumeBindingMode: Immediate

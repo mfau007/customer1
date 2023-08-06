@@ -1,13 +1,13 @@
 apiVersion: ceph.rook.io/v1
 kind: CephBlockPool
 metadata:
-  name: ocs-storagecluster-cephblockpool-nvme
+  name: ocs-storagecluster-cephblockpool-ssd
   namespace: openshift-storage
   annotations:
     argocd.argoproj.io/sync-wave: "6"
 spec:
   compressionMode: none
-  deviceClass: nvme
+  deviceClass: ssd
   erasureCoded:
     codingChunks: 0
     dataChunks: 0

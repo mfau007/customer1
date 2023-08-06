@@ -22,7 +22,7 @@ spec:
     cephObjectStores: {}
     cephToolbox: {}
   multiCloudGateway:
-    dbStorageClassName: ocs-storagecluster-ceph-rbd-nvme # added this
+    dbStorageClassName: ocs-storagecluster-ceph-rbd-ssd # added this
   mirroring: {}
   monDataDirHostPath: /var/lib/rook
   nodeTopologies: {}
@@ -46,7 +46,7 @@ spec:
     replica: 1
     deviceType: hdd # added this field
     resources: {}
-  - config: {}  # added this on down for the nvme
+  - config: {}  # added this on down for the ssd
     count: 3
     dataPVCTemplate:
       metadata: {}
@@ -56,13 +56,13 @@ spec:
         resources:
           requests:
             storage: "1"
-        storageClassName: local-nvme
+        storageClassName: local-ssd
         volumeMode: Block
       status: {}
-    name: ocs-deviceset-local-nvme
+    name: ocs-deviceset-local-ssd
     placement: {}
     preparePlacement: {}
     replica: 1
-    deviceType: nvme  #added this
+    deviceType: ssd  #added this
     resources: {}
   version: 4.12.0
