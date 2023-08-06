@@ -1,0 +1,68 @@
+apiVersion: ocs.openshift.io/v1
+kind: StorageCluster
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"      
+  name: ocs-storagecluster
+  namespace: openshift-storage
+spec:
+  arbiter: {}
+  encryption:
+    kms: {}
+  externalStorage: {}
+  managedResources:
+    cephBlockPools: 
+      reconcileStrategy: ignore  # added this
+    cephCluster: {}
+    cephConfig: {}
+    cephDashboard: {}
+      #    cephFilesystems: {} # commented this out
+    cephNonResilientPools: {}
+    cephObjectStoreUsers: {}
+    cephObjectStores: {}
+    cephToolbox: {}
+  multiCloudGateway:
+    dbStorageClassName: ocs-storagecluster-ceph-rbd-ssd # added this
+  mirroring: {}
+  monDataDirHostPath: /var/lib/rook
+  nodeTopologies: {}
+  storageDeviceSets:
+  - config: {}  # added this on down for the ssd
+    count: 3
+    dataPVCTemplate:
+      metadata: {}
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: "1"
+        storageClassName: local-ssd
+        volumeMode: Block
+      status: {}
+    name: ocs-deviceset-local-ssd
+    placement: {}
+    preparePlacement: {}
+    replica: 1
+    deviceType: ssd  #added this
+    resources: {}    
+  - config: {}
+    count: 3 # verify with stephen
+    dataPVCTemplate:
+      metadata: {}
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: "1"
+        storageClassName: local-hdd
+        volumeMode: Block
+      status: {}
+    name: ocs-deviceset-local-hdd
+    placement: {}
+    preparePlacement: {}
+    replica: 1
+    deviceType: hdd # added this field
+    resources: {}
+  version: 4.12.0
