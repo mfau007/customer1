@@ -13,6 +13,7 @@ spec:
     deviceTypes:
     - disk
     minSize: 190Gi
+    maxSize: 210Gi 
   nodeSelector:
     nodeSelectorTerms:
       - matchExpressions:
@@ -20,4 +21,3 @@ spec:
           operator: Exists
   storageClassName: local-ssd
   volumeMode: Block
-    #  maxDeviceCount: 1
